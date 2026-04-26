@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <h3>{{ shop.name }}</h3>
+        <p>{{ section.settings.description }}</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          {% for link in linklists.footer.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p>{{ shop.email }}</p>
+        <p>{{ shop.phone }}</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description de la boutique"
+    }
+  ]
+}
+{% endschema %}

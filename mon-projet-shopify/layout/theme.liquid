@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} - {{ shop.name }}</title>
+
+  {{ content_for_header }}
+
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% section 'header' %}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {{ 'main.js' | asset_url | script_tag }}
+</body>
+</html>

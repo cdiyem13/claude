@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Bienvenue dans notre boutique",
+        "subtitle": "Découvrez nos produits exclusifs",
+        "button_label": "Acheter maintenant",
+        "button_link": "/collections/all"
+      }
+    }
+  },
+  "order": ["hero"]
+}

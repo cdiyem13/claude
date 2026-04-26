@@ -1,0 +1,52 @@
+<section class="hero" style="background-image: url('{{ section.settings.image | img_url: 'master' }}')">
+  <div class="hero__content">
+    <h1>{{ section.settings.title }}</h1>
+    <p>{{ section.settings.subtitle }}</p>
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link }}" class="btn btn--primary">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bannière héro",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Bienvenue dans notre boutique"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Découvrez nos produits exclusifs"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton",
+      "default": "Acheter maintenant"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bannière héro"
+    }
+  ]
+}
+{% endschema %}

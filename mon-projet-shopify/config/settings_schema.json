@@ -1,0 +1,50 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Mon Projet Shopify",
+    "theme_version": "1.0.0",
+    "theme_author": "Mon Équipe",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Couleur principale",
+        "default": "#1a1a1a"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Couleur secondaire",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Couleur d'accentuation",
+        "default": "#e8604c"
+      }
+    ]
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Police des titres",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Police du corps",
+        "default": "helvetica_n4"
+      }
+    ]
+  }
+]

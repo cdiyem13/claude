@@ -1,0 +1,22 @@
+{
+  "general": {
+    "search": "Rechercher",
+    "close": "Fermer"
+  },
+  "products": {
+    "add_to_cart": "Ajouter au panier",
+    "sold_out": "Épuisé",
+    "unavailable": "Indisponible"
+  },
+  "cart": {
+    "title": "Votre panier",
+    "empty": "Votre panier est vide",
+    "update": "Mettre à jour",
+    "checkout": "Commander",
+    "continue_shopping": "Continuer les achats",
+    "total": "Total"
+  },
+  "collection": {
+    "no_products": "Aucun produit dans cette collection."
+  }
+}

@@ -1,0 +1,44 @@
+{% if cart.item_count > 0 %}
+  <div class="cart">
+    <h1>Votre panier</h1>
+
+    {% form 'cart', cart %}
+      <div class="cart__items">
+        {% for item in cart.items %}
+          <div class="cart__item">
+            <img src="{{ item.image | img_url: '100x' }}" alt="{{ item.title | escape }}">
+
+            <div class="cart__item-info">
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <p>{{ item.variant.title }}</p>
+              <p>{{ item.price | money }}</p>
+            </div>
+
+            <div class="cart__item-quantity">
+              <input
+                type="number"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                min="0"
+                data-index="{{ forloop.index0 }}"
+              >
+            </div>
+
+            <p class="cart__item-total">{{ item.line_price | money }}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="cart__footer">
+        <p class="cart__total">Total : {{ cart.total_price | money }}</p>
+        <button type="submit" name="update" class="btn btn--secondary">Mettre à jour</button>
+        <a href="{{ routes.checkout }}" class="btn btn--primary">Commander</a>
+      </div>
+    {% endform %}
+  </div>
+{% else %}
+  <div class="cart cart--empty">
+    <h1>Votre panier est vide</h1>
+    <a href="{{ routes.root_url }}" class="btn btn--primary">Continuer les achats</a>
+  </div>
+{% endif %}

@@ -1,0 +1,47 @@
+{% assign product = product %}
+
+<div class="product">
+  <div class="product__media">
+    {% for image in product.images %}
+      <img
+        src="{{ image | img_url: '800x' }}"
+        alt="{{ image.alt | escape }}"
+        {% if forloop.first %}class="active"{% endif %}
+      >
+    {% endfor %}
+  </div>
+
+  <div class="product__info">
+    <h1 class="product__title">{{ product.title }}</h1>
+    <p class="product__vendor">{{ product.vendor }}</p>
+
+    <div class="product__price">
+      {% if product.compare_at_price > product.price %}
+        <span class="price--compare">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+      <span class="price">{{ product.price | money }}</span>
+    </div>
+
+    <div class="product__description">
+      {{ product.description }}
+    </div>
+
+    {% form 'product', product %}
+      <select name="id">
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
+            {{ variant.title }} - {{ variant.price | money }}
+          </option>
+        {% endfor %}
+      </select>
+
+      <button type="submit" class="btn btn--primary" {% unless product.available %}disabled{% endunless %}>
+        {% if product.available %}
+          Ajouter au panier
+        {% else %}
+          Épuisé
+        {% endif %}
+      </button>
+    {% endform %}
+  </div>
+</div>
